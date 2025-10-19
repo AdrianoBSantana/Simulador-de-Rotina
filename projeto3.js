@@ -119,55 +119,55 @@ Deseja informar o erro a empresa?`,
             //Funçoes de perda e ganha de estados
             function perdeEnergia(energiaTotal, energiaPerdida) {
                 energiaTotal = energiaTotal - energiaPerdida;
-                console.log(`===================Você gastou (-10) de Energia.
+                console.log(`===================Você gastou (-${energiaPerdida}) de Energia.
                 Sua Energia atual é :${energiaTotal}`);
                 console.log()
                 return energiaTotal
             }
             function ganhaEnergia(energiaTotal, energiaGanha) {
-                energiaTotal = energiaTotal++ + energiaGanha;
-                console.log(`===================Você ganhou (+10) de Energia.
+                energiaTotal = energiaTotal + energiaGanha;
+                console.log(`===================Você ganhou (+${energiaGanha}) de Energia.
                 Sua Energia atual é :${energiaTotal}`);
                 console.log()
                 return energiaTotal
             }
             function perdeInteligencia(inteligenciaTotal, inteligenciaPerdida) {
                 inteligenciaTotal = inteligenciaTotal - inteligenciaPerdida;
-                console.log(`===================Você perdeU Inteligência.
+                console.log(`===================Você perdeu (-${inteligenciaPerdida}) de Inteligência.
                 Sua Inteligência atual é :${inteligenciaTotal}`);
                 console.log()
                 return inteligenciaTotal
             }
             function ganhaInteligencia(inteligenciaTotal, inteligenciaGanha) {
-                inteligenciaTotal = inteligenciaTotal++ + inteligenciaGanha;
-                console.log(`===================Você ficou mais Inteligente(+10).
+                inteligenciaTotal = inteligenciaTotal + inteligenciaGanha;
+                console.log(`===================Você ganhou (+${inteligenciaGanha}) de Inteligência.
                 Sua Inteligência atual é :${inteligenciaTotal}`);
                 console.log()
                 return inteligenciaTotal
             }
             function perdeDinheiro(dinheiroTotal, dinheiroPerdido) {
                 dinheiroTotal = dinheiroTotal - dinheiroPerdido;
-                console.log(`===================Você gastou Dinheiro(-10).
+                console.log(`===================Você gastou (-${dinheiroPerdido}) de Dinheiro.
                 Seu Dinheiro atual é :${dinheiroTotal}`);
                 console.log()
                 return dinheiroTotal
             }
             function ganhaDinheiro(dinheiroTotal, dinheiroGanho) {
-                dinheiroTotal = dinheiroTotal++ + dinheiroGanho;
-                console.log(`===================Você recebeu (+10) Dinheiro.
+                dinheiroTotal = dinheiroTotal + dinheiroGanho;
+                console.log(`===================Você ganhou (+${dinheiroGanho}) de Dinheiro.
                 Dinheiro atual :${dinheiroTotal}`);
                 console.log()
                 return dinheiroTotal
             }
             function perdeTempo(tempoTotal, tempoPerdido) {
                 tempoTotal = tempoTotal - tempoPerdido;
-                console.log(`===================Você usou (-8) horas do seu tempo.
+                console.log(`===================Você usou (-${tempoPerdido}) horas do seu tempo.
                 Tempo atual :${tempoTotal}`);
                 console.log()
                 return tempoTotal
             }
             function dormir(tempoTotal, tempoGanho) {
-                tempoTotal = tempoTotal++ + tempoGanho;
+                tempoTotal = tempoTotal + tempoGanho;
                 console.log(`===================Você dormiu.
                 Restaurando as horas :${tempoTotal}`);
                 console.log()
@@ -197,18 +197,18 @@ DINHEIRO:${dinheiro.inicial}
                 console.log('===================Você foi trabalhar.')
                 tempo.inicial = perdeTempo(tempo.inicial, tempo.perda)
                 dinheiro.inicial = ganhaDinheiro(dinheiro.inicial, dinheiro.ganho)
-                energia.inicial = perdeEnergia(energia.inicial, energia.perda)
+                energia.inicial = perdeEnergia(energia.inicial, 10)
             }
             else if (escolha1 === 2) {
                 console.log('===================Você foi estudar.')
                 tempo.inicial = perdeTempo(tempo.inicial, tempo.perda)
-                energia.inicial = perdeEnergia(energia.inicial, energia.perda)
+                energia.inicial = perdeEnergia(energia.inicial, 10)
                 inteligencia.inicial = ganhaInteligencia(inteligencia.inicial, inteligencia.ganho)
             }
             else if (escolha1 === 3) {
                 console.log('===================Você resolveu vagabundar.')
                 tempo.inicial = perdeTempo(tempo.inicial, tempo.perda)
-                energia.inicial = ganhaEnergia(energia.inicial, energia.ganho)
+                energia.inicial = ganhaEnergia(energia.inicial, 10)
                 dinheiro.inicial = perdeDinheiro(dinheiro.inicial, dinheiro.perda)
             }
             else if (escolha1 === 4 && tempo.inicial > 16) {
